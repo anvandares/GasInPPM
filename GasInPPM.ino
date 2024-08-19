@@ -33,20 +33,22 @@ void loop() {
   
   if(_delay(lastConnectionTime,5000UL))// if five seconds have passed since last reading
   {  
+    int rawGasValue=detect_gas(); //Reads from mq-7 sensor
     Serial.println("______________________________________________________");
     Serial.print("Temperature in C: ");
     Serial.println(dht_temp());
     Serial.print("Humidity: ");
     Serial.println(dht_hum());
-    int rawGasValue=detect_gas();
+   
     Serial.print("Raw gas data: ");
     Serial.println(rawGasValue);
     Serial.print("in PPM: ");
     Serial.println(ppm_value(rawGasValue));
-    lastConnectionTime=millis();
     Serial.println("______________________________________________________");
-
+    
+    lastConnectionTime=millis(); //uppdates timestamp
   }
+  
 }
 
 
