@@ -10,7 +10,7 @@ int dht_temp(){
 
 }
 int dht_hum(){
-float h = dht.readHumidity();
-int humInt=int(h);
-return humInt;
+    float h = dht.readHumidity();
+    int humInt=int(h);
+    return humInt;
 }
