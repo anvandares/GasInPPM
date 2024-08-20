@@ -1,11 +1,6 @@
-#include <Arduino.h>
 #include "dht11.h"
 #include "mq7.h"
 #include "time.h"
-
-#include <Wire.h>
-
-
 unsigned long lastConnectionTime=0UL;
 void setup() {
 /* -------------------------------------------------------------------------- */  
@@ -21,7 +16,6 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
- 
 
  
   dht.begin();
@@ -39,7 +33,11 @@ void loop() {
     Serial.println(dht_temp());
     Serial.print("Humidity: ");
     Serial.println(dht_hum());
-   
+
+
+
+
+
     Serial.print("Raw gas data: ");
     Serial.println(rawGasValue);
     Serial.print("in PPM: ");

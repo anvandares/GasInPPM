@@ -3,14 +3,16 @@
 #define DHTTYPE DHT11 //Defines DHT type
 DHT dht(DHTPIN, DHTTYPE);
 
-int dht_temp(){
+uint8_t dht_temp(){
     float t = dht.readTemperature(); //Reads the temperature in celsius
-    int tempInt=int(t);
+    uint8_t tempInt=uint8_t(t);
     return tempInt;
 
 }
-int dht_hum(){
+uint8_t dht_hum(){
     float h = dht.readHumidity();
-    int humInt=int(h);
+    uint8_t humInt=uint8_t(h);
     return humInt;
 }
+
+
