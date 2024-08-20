@@ -43,9 +43,10 @@ void loop() {
     Serial.print("Raw gas data: ");
     Serial.println(rawGasValue);
     Serial.print("in PPM: ");
-    Serial.println(ppm_value(rawGasValue));
+    float ppmValue=ppm_value(rawGasValue);
+    Serial.println(ppmValue);
     Serial.println("______________________________________________________");
-    
+    warn(ppmValue);
     lastConnectionTime=millis(); //uppdates timestamp
   }
   
